@@ -19,12 +19,12 @@
 | A2 | Tu propio corpus de documentos | 6 | ✅ | [A2_corpus.png](evidencias/A2_corpus.png), [corpus](data/company_documents.json) |
 | A3 | Ingeniería del prompt (antes y después) | 5 | ✅ | [notebook 02b](notebooks/02b_rag_app_nvidia_nim_colab.ipynb), [RESPUESTAS.md](RESPUESTAS.md) |
 | A4 | Muestra el score de similitud en las fuentes | 5 | ✅ | [A4_scores.png](evidencias/A4_scores.png) |
-| B1 | Ejecuta el RAG de papers y evalúa con el ground truth | 6 | ⬜ |  |
-| B2 | Experimentos con chunk_size, k y score_threshold | 8 | ⬜ |  |
-| B3 | Preguntas trampa: ¿el RAG admite que no sabe? | 6 | ⬜ |  |
-| B4 | Preguntas en español sobre papers en inglés | 5 | ⬜ |  |
-| B5 | Escribe tu propio quiz con ground truth | 5 | ⬜ |  |
-| R1 | Reflexión final con tus datos | 10 | ⬜ |  |
+| B1 | Ejecuta el RAG de papers y evalúa con el ground truth | 6 | ✅ | [notebook 03](notebooks/03_rag_workshop_papers_nvidia_nim_colab.ipynb), [RESPUESTAS.md](RESPUESTAS.md) |
+| B2 | Experimentos con chunk_size, k y score_threshold | 8 | ✅ | [notebook 03](notebooks/03_rag_workshop_papers_nvidia_nim_colab.ipynb), [RESPUESTAS.md](RESPUESTAS.md) |
+| B3 | Preguntas trampa: ¿el RAG admite que no sabe? | 6 | ✅ | [notebook 03](notebooks/03_rag_workshop_papers_nvidia_nim_colab.ipynb), [RESPUESTAS.md](RESPUESTAS.md) |
+| B4 | Preguntas en español sobre papers en inglés | 5 | ✅ | [notebook 03](notebooks/03_rag_workshop_papers_nvidia_nim_colab.ipynb), [RESPUESTAS.md](RESPUESTAS.md) |
+| B5 | Escribe tu propio quiz con ground truth | 5 | ✅ | [notebook 03](notebooks/03_rag_workshop_papers_nvidia_nim_colab.ipynb), [RESPUESTAS.md](RESPUESTAS.md) |
+| R1 | Reflexión final con tus datos | 10 | ✅ | [RESPUESTAS.md](RESPUESTAS.md) |
 | C1 | HNSW contra fuerza bruta con FAISS (reto) | 15 | ✅ | [gráficas](evidencias/C1_recall_efsearch.png), [04_challenges](notebooks/04_challenges.ipynb) |
 | C2 | Un tercer paper: el RAG que explica HNSW (reto) | 12 | ✅ | [04_challenges](notebooks/04_challenges.ipynb) |
 | C3 | App Gradio para los papers con filtro por paper (reto) | 15 | ✅ | [C3_gradio.png](evidencias/C3_gradio.png), [04_challenges](notebooks/04_challenges.ipynb) |
@@ -32,7 +32,7 @@
 | C5 | MMR frente a similitud pura (reto) | 8 | ✅ | [04_challenges](notebooks/04_challenges.ipynb) |
 | C6 | Persistencia del índice en disco (reto) | 8 | ✅ | [04_challenges](notebooks/04_challenges.ipynb) |
 
-**Autoevaluación:** 60 / 100 puntos (núcleo 30 / 70, retos 30 / 30; los retos suman 70 y el tope es 30). Es una estimación mía; la calificación la asigna el profesor.
+**Autoevaluación:** 100 / 100 puntos (núcleo 70 / 70, retos 30 / 30; los retos suman 70 y el tope es 30). Es una estimación mía; la calificación la asigna el profesor.
 
 ## Cómo ejecutar mis notebooks
 
@@ -48,4 +48,10 @@ Mi cuenta de NVIDIA devuelve 404 («Function not found for account») para `nvid
 
 ## Decisiones y aprendizajes
 
-DECISIONES
+- **El umbral del notebook no filtraba nada.** `score_threshold=0.3` se compara en Qdrant contra `(coseno + 1) / 2`, no contra el coseno. Por eso las preguntas fuera de contexto devolvían siempre 3 fuentes. Con mis datos propuse coseno >= 0.30, es decir `score_threshold=0.65`, que conserva las 8 preguntas buenas y deja sin contexto a 3 de las 4 que no se podían responder. No existe un umbral perfecto: la peor pregunta buena sacó 0.354 y la mejor fuera de contexto 0.393.
+- **El tamaño del chunk depende del corpus.** Mis 11 documentos de NodoIA son cortos. Con `chunk_size=400` salían 18 chunks y 7 documentos partidos; con 700 sale un chunk por documento.
+- **Del prompt, lo que más cambió fue pedir la cita entre corchetes.** El límite de 3 oraciones fue lo que el modelo siguió peor, y la frase fija se aplicó a veces de más, incluso con contexto relevante.
+- **Evaluar a ojo no escala.** Con una métrica de recuperación (hit@k) sobre 10 preguntas, `chunk_size=900` dio hit@3 de 90 %, contra 70 % con 400 y con 1500. La métrica tiene límites: busca una palabra clave, así que castiga respuestas bien recuperadas con otra redacción.
+- **HNSW no gana siempre.** Con vectores aleatorios necesité `efSearch=256` para un recall de 0.97 con M=16, y a recall igual no le ganó al índice exacto hasta n=500.000. Con datos agrupados, más parecidos a embeddings reales, `efSearch=10` ya daba 0.916. El tipo de datos importa tanto como los parámetros.
+- **MMR y persistencia.** MMR bajó la redundancia en las 3 preguntas probadas, pero con 10 preguntas el hit@5 quedó igual. Reabrir un índice de Qdrant en disco tardó unos 19 ms, contra unos 8,7 s de volver a indexar.
+- **Mi cuenta de NVIDIA no tenía habilitado el modelo del curso.** El 404 apareció solo al invocarlo, no al listar los modelos, así que tuve que probar los modelos uno a uno y quedarme con uno del mismo tamaño. Aprendí a comprobar el acceso a cada modelo antes de depender de él.
