@@ -1,7 +1,7 @@
 # Workshop RAG · SI3003 Inteligencia Artificial
 
 - **Nombre:** Juan David Sierra Orozco
-- **Código estudiantil:** CODIGO_ESTUDIANTIL
+- **Código estudiantil:** 1000027039
 - **Usuario de GitHub:** [jdj40211](https://github.com/jdj40211)
 - **Fecha:** 21 de octubre de 2026
 - **Entrega a:** jipadillab@eafit.edu.co
@@ -25,14 +25,14 @@
 | B4 | Preguntas en español sobre papers en inglés | 5 | ⬜ |  |
 | B5 | Escribe tu propio quiz con ground truth | 5 | ⬜ |  |
 | R1 | Reflexión final con tus datos | 10 | ⬜ |  |
-| C1 | HNSW contra fuerza bruta con FAISS (reto) | 15 | ⬜ |  |
-| C2 | Un tercer paper: el RAG que explica HNSW (reto) | 12 | ⬜ |  |
-| C3 | App Gradio para los papers con filtro por paper (reto) | 15 | ⬜ |  |
-| C4 | Evaluación automática de la recuperación (reto) | 12 | ⬜ |  |
-| C5 | MMR frente a similitud pura (reto) | 8 | ⬜ |  |
-| C6 | Persistencia del índice en disco (reto) | 8 | ⬜ |  |
+| C1 | HNSW contra fuerza bruta con FAISS (reto) | 15 | ✅ | [gráficas](evidencias/C1_recall_efsearch.png), [04_challenges](notebooks/04_challenges.ipynb) |
+| C2 | Un tercer paper: el RAG que explica HNSW (reto) | 12 | ✅ | [04_challenges](notebooks/04_challenges.ipynb) |
+| C3 | App Gradio para los papers con filtro por paper (reto) | 15 | ✅ | [C3_gradio.png](evidencias/C3_gradio.png), [04_challenges](notebooks/04_challenges.ipynb) |
+| C4 | Evaluación automática de la recuperación (reto) | 12 | ✅ | [eval/preguntas.csv](eval/preguntas.csv), [04_challenges](notebooks/04_challenges.ipynb) |
+| C5 | MMR frente a similitud pura (reto) | 8 | ✅ | [04_challenges](notebooks/04_challenges.ipynb) |
+| C6 | Persistencia del índice en disco (reto) | 8 | ✅ | [04_challenges](notebooks/04_challenges.ipynb) |
 
-**Autoevaluación:** 30 / 100 puntos (núcleo 30 / 70, retos 0 / 30; los retos suman 0 y el tope es 30). Es una estimación mía; la calificación la asigna el profesor.
+**Autoevaluación:** 60 / 100 puntos (núcleo 30 / 70, retos 30 / 30; los retos suman 70 y el tope es 30). Es una estimación mía; la calificación la asigna el profesor.
 
 ## Cómo ejecutar mis notebooks
 
