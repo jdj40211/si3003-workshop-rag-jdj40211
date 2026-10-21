@@ -1,3 +1,11 @@
 id,pregunta,fuente_esperada,palabra_clave,respuesta_esperada
-1,How many attention heads does the base Transformer use?,attention_paper.pdf,8,h = 8 heads con dk = dv = 64
+1,How many attention heads does the base Transformer use?,attention_paper.pdf,h = 8,h = 8 heads con dk = dv = 64
 2,What are the two RAG model variants?,rag_paper.pdf,RAG-Token,RAG-Sequence y RAG-Token
+3,How many warmup steps are used in the Transformer learning rate schedule?,attention_paper.pdf,warmup_steps=4000,4000 pasos de warmup con el optimizador Adam
+4,What value of label smoothing was used when training the Transformer?,attention_paper.pdf,labelsmoothing,epsilon = 0.1
+5,What kind of positional encoding does the Transformer use instead of learned embeddings?,attention_paper.pdf,sinusoid,Codificaciones sinusoidales de seno y coseno
+6,What BLEU score did the big Transformer reach on WMT 2014 English-to-German?,attention_paper.pdf,28.4,28.4 BLEU
+7,Which pre-trained seq2seq model does RAG use as its generator?,rag_paper.pdf,BART,BART-large con 400M de parametros
+8,Which retriever does RAG use to find documents?,rag_paper.pdf,DPR,Dense Passage Retriever (bi-encoder)
+9,How many documents does the Wikipedia non-parametric memory of RAG contain?,rag_paper.pdf,21M,21M de documentos de 100 palabras
+10,Which library does RAG use to build the MIPS index over Wikipedia?,rag_paper.pdf,FAISS,FAISS con un indice HNSW

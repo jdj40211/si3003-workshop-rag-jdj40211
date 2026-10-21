@@ -1,0 +1,101 @@
+[
+  {
+    "id": "general_001",
+    "title": "Presentación del semillero NodoIA",
+    "content": "NodoIA es un semillero de investigación en inteligencia artificial de EAFIT, creado en 2024 dentro del Departamento de Ciencias de la Computación (club ficticio usado como corpus de práctica). Reúne a estudiantes de pregrado que quieren aprender haciendo proyectos reales de aprendizaje automático, visión por computador y modelos de lenguaje. Lo coordina la profesora Laura Mejía y actualmente tiene 34 miembros activos organizados en tres líneas: lenguaje natural, visión y datos para la agroindustria.",
+    "metadata": {
+      "department": "general",
+      "type": "descripcion"
+    }
+  },
+  {
+    "id": "reglamento_001",
+    "title": "Reglamento de membresía",
+    "content": "Para ser miembro de NodoIA se debe estar matriculado en un programa de pregrado de EAFIT y tener un promedio acumulado mínimo de 3,5. Cada miembro dedica al menos 6 horas semanales al semillero entre reuniones y trabajo en su proyecto. Todo miembro nuevo pasa por un semestre de prueba, al final del cual el comité decide si queda como miembro pleno. Quien falte a más de 3 reuniones generales consecutivas sin avisar pierde su cupo y debe volver a presentarse a la convocatoria. Los miembros deben citar siempre al semillero en las publicaciones y presentaciones derivadas de sus proyectos.",
+    "metadata": {
+      "department": "gobierno",
+      "type": "reglamento"
+    }
+  },
+  {
+    "id": "horarios_001",
+    "title": "Horario de reuniones",
+    "content": "La reunión general de NodoIA es los martes de 6:00 p. m. a 8:00 p. m. en el bloque 19, sala 302. Los jueves de 4:00 p. m. a 6:00 p. m. hay sesión de laboratorio práctico en la sala de cómputo, donde cada línea trabaja en su proyecto con acompañamiento de un mentor. Durante las semanas de parciales las reuniones se suspenden y se avisa por el canal de Discord.",
+    "metadata": {
+      "department": "operacion",
+      "type": "horario"
+    }
+  },
+  {
+    "id": "proyectos_001",
+    "title": "Proyecto Chatbot de Bienestar",
+    "content": "El Chatbot de Bienestar es un asistente basado en RAG que responde preguntas de estudiantes sobre las guías de bienestar universitario. Usa embeddings de NVIDIA NIM y un índice vectorial en Qdrant. Lo desarrollan 5 integrantes de la línea de lenguaje natural, lidera el proyecto Camilo Restrepo y el prototipo está previsto para mayo de 2027. Todavía no está abierto al público y solo se prueba con documentos de ejemplo.",
+    "metadata": {
+      "department": "proyectos",
+      "type": "proyecto"
+    }
+  },
+  {
+    "id": "proyectos_002",
+    "title": "Proyecto Detector de Plagas en Café",
+    "content": "El Detector de Plagas en Café es un proyecto de visión por computador que identifica la broca y la roya en fotos de hojas y frutos. Entrena un modelo YOLO con imágenes tomadas con dron en una finca cafetera de Fredonia, Antioquia, con la que el semillero tiene un acuerdo de colaboración. Participan 8 integrantes de la línea de visión y datos para la agroindustria, y el modelo actual alcanza un 87 % de precisión en el conjunto de validación.",
+    "metadata": {
+      "department": "proyectos",
+      "type": "proyecto"
+    }
+  },
+  {
+    "id": "presupuesto_001",
+    "title": "Presupuesto anual 2026",
+    "content": "El presupuesto de NodoIA para 2026 es de 12.000.000 de pesos. Se reparte así: 40 % para cómputo en la nube, 25 % para eventos, 20 % para hardware y 15 % para auxilios de transporte a competencias. Toda compra debe aprobarse antes por la coordinadora y se reembolsa solo con factura a nombre de la universidad. Los gastos superiores a 500.000 pesos requieren además la aprobación del comité del semillero.",
+    "metadata": {
+      "department": "finanzas",
+      "type": "presupuesto"
+    }
+  },
+  {
+    "id": "convocatorias_001",
+    "title": "Convocatoria de ingreso 2026-2",
+    "content": "La convocatoria de ingreso para el semestre 2026-2 estuvo abierta del 20 de julio al 3 de agosto de 2026. Se ofrecieron 12 cupos nuevos. El proceso tuvo tres pasos: formulario de inscripción, prueba técnica de programación en Python y una entrevista corta con dos miembros del comité. Los resultados se publicaron en el canal de Discord el 10 de agosto. La siguiente convocatoria será para 2027-1.",
+    "metadata": {
+      "department": "gobierno",
+      "type": "convocatoria"
+    }
+  },
+  {
+    "id": "eventos_001",
+    "title": "Hackatón NodoIA Day",
+    "content": "El NodoIA Day es el hackatón anual del semillero y este año será el 14 de noviembre de 2026 en el bloque 19, durante 12 horas seguidas. Los equipos son de 3 o 4 personas y la inscripción es gratuita y abierta a toda la comunidad de EAFIT. El primer puesto recibe 1.500.000 pesos, el segundo 800.000 y el tercero 400.000. El reto de este año consiste en construir una aplicación RAG sobre documentos reales de una organización.",
+    "metadata": {
+      "department": "eventos",
+      "type": "evento"
+    }
+  },
+  {
+    "id": "recursos_001",
+    "title": "Recursos de cómputo",
+    "content": "El semillero dispone de un servidor compartido con 2 GPU y de 300 dólares en créditos de nube para el semestre. La GPU se reserva en el calendario compartido y cada reserva puede durar como máximo 8 horas continuas. Está prohibido usar el servidor para proyectos ajenos al semillero o para minería de criptomonedas. Si una reserva no se usa en los primeros 30 minutos, se libera para el siguiente miembro de la lista.",
+    "metadata": {
+      "department": "operacion",
+      "type": "recursos"
+    }
+  },
+  {
+    "id": "certificados_001",
+    "title": "Certificados y horas de semillero",
+    "content": "Al terminar un semestre completo, los miembros reciben una constancia de participación firmada por la coordinadora, en la que se indican las horas dedicadas. Con 96 horas acreditadas se puede solicitar la homologación como actividad complementaria del plan de estudios. Las constancias se piden por correo a la coordinación y tardan hasta 8 días hábiles en emitirse.",
+    "metadata": {
+      "department": "gobierno",
+      "type": "certificados"
+    }
+  },
+  {
+    "id": "contacto_001",
+    "title": "Canales de comunicación",
+    "content": "El canal oficial de NodoIA es un servidor de Discord, donde se publican los avisos de reuniones, convocatorias y eventos. Para trámites formales, como constancias o reservas especiales de la GPU, se escribe al correo nodoia.semillero@example.com. La coordinación responde los correos en un máximo de 2 días hábiles. No se atienden solicitudes por mensajes directos de WhatsApp.",
+    "metadata": {
+      "department": "operacion",
+      "type": "contacto"
+    }
+  }
+]
